@@ -94,7 +94,7 @@ const App = ({ games, loading, error, keyError, fetchGames }) => {
                     <div className={'searchboxContainer1'} >
 
                         <KeyIcon />
-                        <input className={'rightinput'} type="text" value={inputApiKey} onChange={handleApiKeyChange} />
+                        <input className={'rightinput'} placeholder={'Api key'} type="text" value={inputApiKey} onChange={handleApiKeyChange} />
 
                     </div>
                     <button className={'rightbutton'} onClick={handleSaveKey}>Save API Key</button>
@@ -135,7 +135,7 @@ const App = ({ games, loading, error, keyError, fetchGames }) => {
                     <div className={'searchboxContainer1'}>
 
                         <KeyIcon />
-                        <input className={'rightinput'} type="text" value={inputApiKey} onChange={handleApiKeyChange} />
+                        <input className={'rightinput'} placeholder={'Api key'} type="text" value={inputApiKey} onChange={handleApiKeyChange} />
 
                     </div>
                     <button className={'rightbutton'} onClick={handleSaveKey}>Save API Key</button>

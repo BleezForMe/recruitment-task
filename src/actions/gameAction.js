@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 let API_KEY = '';
 
 export const fetchGames = (query, page) => async (dispatch) => {
@@ -11,7 +9,8 @@ export const fetchGames = (query, page) => async (dispatch) => {
         if (storedApiKey) {
             API_KEY = storedApiKey;
         }
-        const { data } = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=10&page=${page}&search=${query}`);
+        const response = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=10&page=${page}&search=${query}`);
+        const data = await response.json();
         localStorage.setItem('pages', Math.floor(parseInt(data.count)/10));
         dispatch({ type: 'FETCH_GAMES_SUCCESS', payload: data.results });
         console.log(data)
